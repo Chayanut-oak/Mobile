@@ -11,7 +11,7 @@ const Lab2_1 = ({ navigation }) => {
       <View style={styles.container2}>
         <Image
           style={{ width: 100, height: 100 }}
-          source={require('./IT_Logo.png')}
+          source={require('../IT_Logo.png')}
           resizeMode='contain'
         />
         <Text style={styles.titleText} >
@@ -37,7 +37,13 @@ const Lab2_1 = ({ navigation }) => {
             color="#1e90ff"
           />
         </View>
-
+        <View style={styles.button2}>
+          <Button
+            onPress={() => navigation.navigate('lab4')}
+            title="Lab4a"
+            color="#1e90ff"
+          />
+        </View>
         <View style={styles.button2}>
           <Button
             // onPress={() => Alert.alert('Simple Button pressed')}

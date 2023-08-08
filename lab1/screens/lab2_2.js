@@ -6,10 +6,10 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'rea
 const Lab2_2 = () => {
   const [count, setCount] = useState(0);
   const onPress = () => setCount(prevCount => prevCount + 1)
-  const image = [{ src: require('./course-bach-it.jpg'), name: 'Information Technology' },
-  { src: require('./course-bach-dsba.jpg'), name: 'Data Science and Business Analytics' },
-  { src: require('./course-bach-bit.jpg'), name: 'Business Information Technology', name2: '(International Program)' },
-  { src: require('./course-bach-ait.jpg'), name: 'Artificial Intelligence Technology' },
+  const image = [{ src: require('../course-bach-it.jpg'), name: 'Information Technology' },
+  { src: require('../course-bach-dsba.jpg'), name: 'Data Science and Business Analytics' },
+  { src: require('../course-bach-bit.jpg'), name: 'Business Information Technology', name2: '(International Program)' },
+  { src: require('../course-bach-ait.jpg'), name: 'Artificial Intelligence Technology' },
   ]
 
   return (
@@ -17,7 +17,7 @@ const Lab2_2 = () => {
       <View style={styles.containers1}>
         <View style={styles.conmage}>
           <Image style={{ width: 60, height: 60 }}
-            source={require('./IT_Logo.png')}
+            source={require('../IT_Logo.png')}
           />
         </View>
         <View style={styles.context}>
