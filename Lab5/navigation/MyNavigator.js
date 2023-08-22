@@ -11,6 +11,7 @@ import { MealDetailScreen } from '.././screens/MealDetailScreen';
 import FavoritesScreen from "../screens/FavoritesScreen";
 import FiltersScreen from "../screens/FiltersScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import Icon from 'react-native-vector-icons/Ionicons';
 // import library ที่จำเป็น
 
 // import screen ที่เกี่ยวข้อง
@@ -109,12 +110,12 @@ function MyNavigator() {
     >
       <MealsFavTabNavigator.Screen name="MealNav" options={{
         headerShown: false, tabBarIcon: ({ color, size }) => {
-          return <AntDesign name="wechat" size={size} color={color} />;
+          return <Icon name="ios-restaurant" size={size} color={color} />;
         },
       }} component={MealNav} />
       <MealsFavTabNavigator.Screen name="MealsFavTab" options={{
         headerShown: false, tabBarIcon: ({ color, size }) => {
-          return <AntDesign name="wechat" size={size} color={color} />;
+          return <Icon name="ios-star" size={size} color={color} />;
         },
       }} component={MealsFavTab} />
 
