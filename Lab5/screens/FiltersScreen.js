@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState}  from "react";
 import { View, Text, StyleSheet, Switch } from "react-native";
 
 const FiltersScreen = (props) => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const [isEnabled2, setIsEnabled2] = useState(false);
+  const [isEnabled3, setIsEnabled3] = useState(false);
+  const [isEnabled4, setIsEnabled4] = useState(false);
+const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+const toggleSwitch2 = () =>setIsEnabled2(previousState => !previousState);
+const toggleSwitch3 = () =>setIsEnabled3(previousState => !previousState);
+const toggleSwitch4 = () =>setIsEnabled4(previousState => !previousState);
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Available Filters / Restrictions</Text>
@@ -10,7 +18,8 @@ const FiltersScreen = (props) => {
         <Switch
           trackColor={{ true: "#ff6f00", false: "lightgray" }}
           thumbColor={"#ff6f00"}
-          value={true}
+          onValueChange={toggleSwitch}
+          value={isEnabled}
         />
       </View>
       <View style={styles.filterContainer}>
@@ -18,7 +27,8 @@ const FiltersScreen = (props) => {
         <Switch
           trackColor={{ true: "#ff6f00", false: "lightgray" }}
           thumbColor={"#ff6f00"}
-          value={false}
+          onValueChange={toggleSwitch2}
+          value={isEnabled2}
         />
       </View>
       <View style={styles.filterContainer}>
@@ -26,7 +36,8 @@ const FiltersScreen = (props) => {
         <Switch
           trackColor={{ true: "#ff6f00", false: "lightgray" }}
           thumbColor={"#ff6f00"}
-          value={true}
+          onValueChange={toggleSwitch3}
+          value={isEnabled3}
         />
       </View>
       <View style={styles.filterContainer}>
@@ -34,7 +45,8 @@ const FiltersScreen = (props) => {
         <Switch
           trackColor={{ true: "#ff6f00", false: "lightgray" }}
           thumbColor={"#ff6f00"}
-          value={false}
+          onValueChange={toggleSwitch4}
+          value={isEnabled4}
         />
       </View>
     </View>
