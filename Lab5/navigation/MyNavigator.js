@@ -42,7 +42,7 @@ const MainNavigator = createDrawerNavigator();
 function MealsFavTab() {
   return (
     <FavNavigatorNavigator.Navigator >
-      <FavNavigatorNavigator.Screen name="Favorites2" component={FavNav} />
+      <FavNavigatorNavigator.Screen name="Favorites2" options={{headerShown: false}} component={FavNav} />
       <FavNavigatorNavigator.Screen name="Filters2" component={MealDetailScreen} />
     </FavNavigatorNavigator.Navigator>
   );
@@ -62,7 +62,8 @@ export default function MainNav() {
 function FavNav() {
   return (
     <FavNavigator.Navigator >
-      <FavNavigator.Screen name="Favorites2" options={{ headerShown: false }} component={FavoritesScreen} />
+      <FavNavigator.Screen name="Favorites" options={{ headerShown: true }} component={FavoritesScreen} />
+      <FavNavigator.Screen name="MealDetail" options={{ headerShown: true }} component={MealDetailScreen}/>
     </FavNavigator.Navigator>
   );
 }

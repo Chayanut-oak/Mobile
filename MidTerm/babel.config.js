@@ -13,4 +13,3 @@ module.exports = function (api) {
     ],
   };
 };
-// npm install react-native-reanimated@3.3.0
