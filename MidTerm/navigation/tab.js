@@ -13,47 +13,32 @@ import Viewstudy from "../screens/Viewstudy";
 const TabNavigator = createBottomTabNavigator();
 const MainNavigator = createNativeStackNavigator();
 const DataNavigator = createNativeStackNavigator();
-function TabNav() {
-    
 
+export default function TabNav() {
   return (
-      <TabNavigator.Navigator >
+    <NavigationContainer>
+       <TabNavigator.Navigator >
         <TabNavigator.Screen name="Home" options={{ headerShown: false }} component={Home} />
         
-        <TabNavigator.Screen name="Programs" options={{ headerShown: false }} component={Programs} />
+        <TabNavigator.Screen name="Programs" options={{ headerShown: false }} component={MainNav} />
         
       </TabNavigator.Navigator>
+    </NavigationContainer>
+     
 
     
   );
 }
-export default function  MainNav() {
-    
-
+ function  MainNav() {
     return (
-      <NavigationContainer>
         <MainNavigator.Navigator >
-          <MainNavigator.Screen name="Home" options={{ headerShown: false }} component={TabNav} />
-          <MainNavigator.Screen name="Detail"  options={({ route }) => ({title: route.params.Title})}  component={Detail} />
+          <MainNavigator.Screen name="Program"  options={{ headerShown: false }}  component={Programs} />
+          <MainNavigator.Screen name="Detail"  options={({ route }) => ({title: route.params.Title , headerStyle:{backgroundColor:"lightblue"}}) }  component={Detail} />
           <MainNavigator.Screen name="Viewstudy" options={{ headerShown: true }} component={Viewstudy} />
         </MainNavigator.Navigator>
-      </NavigationContainer>
-      
     );
   }
-  function  DataNav() {
-    return (
-   
-        <DataNavigator.Navigator >
-
-          <DataNavigator.Screen name="Detail"  options={
-          ({ route }) => ({
-            title: route.params.Title,
-          })}  component={Detail} />
-          <DataNavigator.Screen name="Viewstudy" options={{ headerShown: true }} component={Viewstudy} />
-        </DataNavigator.Navigator>
-    );
-  }
+ 
 
 
 

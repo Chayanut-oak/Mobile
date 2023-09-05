@@ -20,9 +20,12 @@ const Viewstudy = ({ route, navigation }) => {
                 style={styles.input}
             placeholder="กรอกภาคเรียน"
             />
-        <Button style={styles.button}
+            <View style={styles.button}>
+               <Button 
         title='ค้นหา'
-        />
+        /> 
+            </View>
+        
 
 
         </View>
@@ -38,7 +41,8 @@ const styles = StyleSheet.create({
         flexDirection:"row"
     },
     button:{
-        height: 40,
+        width: 70,
+        margin: 12
     },
     input: {
         height: 40,
