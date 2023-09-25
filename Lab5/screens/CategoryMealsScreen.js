@@ -7,14 +7,16 @@ import {
   Platform,
   FlatList,
 } from "react-native";
-import { CATEGORIES, MEALS } from "../data/dummy-data";
+import { CATEGORIES } from "../data/dummy-data";
+import { useSelector } from 'react-redux';
 import MealItem from "../components/MealItem";
 import MealList from "../components/MealList";
 const CategoryMealsScreen = ({ route, navigation }) => {
 
   const catId = route.params.ID
-
-  const displayedMeals = MEALS.filter(
+  
+  const availableMeals = useSelector(state => state.meals.filteredMeals)
+  const displayedMeals = availableMeals.filter(
     (meal) => meal.categoryIds.indexOf(catId) >= 0
   );
   return (

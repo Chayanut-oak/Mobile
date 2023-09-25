@@ -7,9 +7,20 @@ import { CategoriesScreen } from './screens/CategoriesScreen';
 import { CategoryMealsScreen } from './screens/CategoryMealsScreen';
 import { MealDetailScreen } from './screens/MealDetailScreen';
 import MainNav from "./navigation/MyNavigator";
+import mealsReducer from "./store/reducers/mealsReducer";
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+const rootReducer = combineReducers({
+  meals: mealsReducer
+})
+const store = createStore(rootReducer);
 export default function App() {
 
-  return <MainNav />;
+  return (
+    <Provider store={store}>
+      <MainNav />
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({
