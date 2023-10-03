@@ -6,8 +6,6 @@ import { useSelector } from "react-redux";
 
 const FavoritesScreen = ({ route, navigation }) => {
 const favormeals = useSelector(state => state.meals.favoriteMeals)
-
-
   return (
       <MealList listData={favormeals} navigation={navigation} />
 
